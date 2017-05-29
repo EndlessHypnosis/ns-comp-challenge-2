@@ -3,6 +3,7 @@
 /*
 
 FADCBE - tan headshot bg
+#FCE9D6 - even lighter tan than above
 7A5938 - brown
 FBB773 - orange
 C7AF97 - grey tan
@@ -10,35 +11,150 @@ FFF6E9 - background of card
 C7B59E - background of page
 591C0E - maroon
 496F80 - grey blue
-3C4042 - dark grey
+3C4042 - dark grey - header bg
 0BC9C0 - teal
 
 */
+
+* {
+  box-sizing: border-box;
+}
+
 
 body {
   background-color: #C7B59E;
 }
 
+.body-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
 .header-section {
-  background-color: #7A5938;
-  padding: 20px;
+  background-color: #3C4042;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-top {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-bot {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+
+
+
+.bigly {
+  font-size: 30px;
+  color: #FBB773;
+}
+
+
+.text-title {
+  font-family: 'Bangers', cursive;
+  font-size: 50px;
+  line-height: 0.1;
+  color: #FCE9D6;
+  text-shadow: rgba(255,255,255,.1) -1px -1px 1px,rgba(0,0,0,.5) 1px 1px 1px;
+}
+
+
+.text-subtitle {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  color: #C7B59E;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.text-subtitle span {
+  margin-left: 45px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.text-subtitle > :first-child,
+.text-subtitle > :first-child > i
+ {
+  margin-left: 0;
+  color: #FCE9D6;
+}
+
+
+.text-subtitle span i {
+  margin-right: 13px;
+}
+
+
+
+
+.text-menu {
+  display: flex;
+  flex-direction: row;
+}
+
+.text-menu > span {
+  color: #FBB773;
+}
+
+.menu-pre {
+  margin-right: 10px;
+  font-size: 30px;
+  color: #FBB773;
+}
+
+.menu-post {
+  margin-left: 10px;
+  color: #FBB773;
+}
+
+
+.main-section-title {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  margin-left: 15px;
+  color: #3C4042;
+}
+
+
+.relative {
+  position: relative;
 }
 
 .avatar {
   width: 280px;
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+  /*box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);*/
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5) inset, 0 1px 1px #7A5938;
+	border-radius:4px 4px 0 0;
   /*text-align: center;*/
-  position: relative;
 }
 
 .bg-tan {
   /*background-color: #FADCBE;*/
-  border-bottom: 1px solid #C7AF97;
-  background: #FADCBE; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#FFF6E9, #FADCBE); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#FFF6E9, #FADCBE); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#FFF6E9, #FADCBE); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#FFF6E9, #FADCBE); /* Standard syntax */
+  /*border-bottom: 1px solid #C7AF97;*/
+  background: #FFF6E9; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#FFF6E9, #FADCBE 70%); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#FFF6E9, #FADCBE 70%); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#FFF6E9, #FADCBE 70%); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#FFF6E9, #FADCBE 70%); /* Standard syntax */
 }
 
 
@@ -51,12 +167,6 @@ figure {
 	overflow: hidden;
 }
 
-.text-subtitle {
-  font-family: 'Varela Round', sans-serif;
-  font-size: 18px;
-  color: #C7B59E;
-  text-transform: uppercase;
-}
 
 .views-big {
   font-family: 'Varela Round', sans-serif;
@@ -64,17 +174,6 @@ figure {
   right: 20px;
   top: 5px;
   font-size: 12px;
-}
-
-.bigly {
-  font-size: 30px;
-  color: #FBB773;
-}
-
-.text-title {
-  font-family: 'Lilita One', cursive;
-  font-size: 40px;
-  color: #FFF6E9;
 }
 
 .bio {
@@ -90,10 +189,12 @@ figure {
 
 /* Slide */
 .card {
-  margin: 50px;
+  margin: 15px;
   display: inline-block;
   border: 1px solid #C7AF97;
+  border-radius: 4px;
   background-color: #FFF6E9;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card figure img {
